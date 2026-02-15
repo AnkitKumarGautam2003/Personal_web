@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { 
   Globe, 
@@ -53,7 +52,7 @@ const Hero = () => (
         Media Without PR Agency <br className="hidden md:block" />
         Retainers
       </h1>
-      <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed font-medium">
+      <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed tracking-wide font-medium">
         Strategic press release distribution and media placement across global publications — helping founders, startups, and brands build authority fast.
       </p>
       <div className="flex justify-center">
@@ -66,7 +65,7 @@ const Hero = () => (
 );
 
 const Logos = () => {
-  // Ordered as per the screenshot: 5 in first row, 3 in second
+  // Ordered as per the layout
   const row1 = ["Forbes", "TechCrunch", "Yahoo Finance", "Business Insider", "Bloomberg"];
   const row2 = ["Reuters", "Associated Press", "MarketWatch"];
   
@@ -77,19 +76,19 @@ const Logos = () => {
           Trusted Distribution Across Leading Global Media Platforms
         </h3>
         
-        {/* Row 1: 5 Columns on Large, 2-3 on Small */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center mb-10 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+        {/* Row 1: 5 Columns on Large */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center mb-10 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
           {row1.map(p => (
-            <div key={p} className="text-center font-bold text-lg md:text-xl text-gray-600 hover:text-navy cursor-default">
+            <div key={p} className="text-center font-bold text-lg md:text-xl text-gray-700 hover:text-navy cursor-default">
               {p}
             </div>
           ))}
         </div>
         
         {/* Row 2: Centered group for the remaining 3 */}
-        <div className="flex flex-wrap justify-center gap-x-12 md:gap-x-20 gap-y-8 items-center opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+        <div className="flex flex-wrap justify-center gap-x-12 md:gap-x-20 gap-y-8 items-center opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
           {row2.map(p => (
-            <div key={p} className="text-center font-bold text-lg md:text-xl text-gray-600 hover:text-navy cursor-default">
+            <div key={p} className="text-center font-bold text-lg md:text-xl text-gray-700 hover:text-navy cursor-default">
               {p}
             </div>
           ))}
@@ -113,7 +112,7 @@ const About = () => (
         <p className="text-lg font-bold text-gray-500 mb-8 uppercase tracking-widest">
           Global Press Release & Media Placement Specialist
         </p>
-        <div className="space-y-6 text-slate-900 leading-relaxed text-lg font-medium">
+        <div className="space-y-6 text-slate-900 leading-relaxed tracking-wide text-lg font-medium">
           <p>
             With extensive experience in global PR distribution, I help startups and established brands achieve strategic media visibility across international digital channels.
           </p>
@@ -127,7 +126,6 @@ const About = () => (
             My approach focuses on strategic positioning over volume, ensuring every press release and media placement serves your broader business objectives.
           </p>
         </div>
-        {/* Updated tags: Dark text on clear background for visibility as per screenshot feedback */}
         <div className="mt-10 flex flex-wrap gap-3">
           {['Cisco', 'ASER', 'Global PR Networks', 'International Expos'].map(tag => (
             <span key={tag} className="px-5 py-2.5 bg-slate-100 text-navy font-black text-xs uppercase tracking-wider rounded-full border border-slate-200">
@@ -175,7 +173,7 @@ const Services = () => {
                 {s.icon}
               </div>
               <h3 className="text-2xl font-black text-navy mb-4 tracking-tight">{s.title}</h3>
-              <p className="text-slate-800 mb-8 leading-relaxed font-medium">{s.desc}</p>
+              <p className="text-slate-800 mb-8 leading-relaxed tracking-wide font-medium">{s.desc}</p>
               <a href="#" className="inline-flex items-center text-navy font-black hover:text-accent transition-colors uppercase text-sm tracking-wider">
                 Learn More <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
@@ -231,27 +229,26 @@ const Results = () => {
               <h3 className="text-3xl font-black text-navy mb-12 tracking-tight">{c.client}</h3>
               <div className="grid md:grid-cols-2 gap-16 mb-12">
                 <div>
-                  <p className="text-sm font-black text-navy uppercase tracking-widest mb-4 opacity-50">CHALLENGE</p>
-                  <p className="text-slate-950 leading-relaxed font-semibold text-xl">{c.challenge}</p>
+                  <p className="text-sm font-black text-navy uppercase tracking-widest mb-4 opacity-80">CHALLENGE</p>
+                  <p className="text-slate-950 leading-relaxed tracking-wide font-semibold text-xl">{c.challenge}</p>
                 </div>
                 <div>
-                  <p className="text-sm font-black text-navy uppercase tracking-widest mb-4 opacity-50">RESULT</p>
-                  <p className="text-slate-950 leading-relaxed font-semibold text-xl">{c.result}</p>
+                  <p className="text-sm font-black text-navy uppercase tracking-widest mb-4 opacity-80">RESULT</p>
+                  <p className="text-slate-950 leading-relaxed tracking-wide font-semibold text-xl">{c.result}</p>
                 </div>
               </div>
               <div className="grid grid-cols-3 gap-4 pt-12 border-t border-slate-100">
                 {c.stats.map((s, idx) => (
                   <div key={idx} className="text-center">
                     <div className="text-3xl md:text-5xl font-black text-navy mb-2">{s.val}</div>
-                    <div className="text-[10px] md:text-xs font-black text-slate-400 uppercase tracking-widest">{s.label}</div>
+                    <div className="text-[10px] md:text-xs font-black text-slate-500 uppercase tracking-widest">{s.label}</div>
                   </div>
                 ))}
               </div>
             </div>
           ))}
         </div>
-        {/* Alignment Fix: Center aligned CTA for the results section to anchor the content */}
-        <div className="mt-24 flex justify-center">
+        <div className="mt-24 flex justify-start pl-4 md:pl-0">
           <Button>Book Your Strategy Call <ArrowRight className="ml-2 w-5 h-5" /></Button>
         </div>
       </div>
@@ -278,8 +275,8 @@ const ExpoEvents = () => {
                 {e.year}
               </div>
               <h3 className="text-2xl font-black text-navy mb-4 tracking-tight">{e.name}</h3>
-              <p className="text-slate-700 mb-6 leading-relaxed font-medium">{e.desc}</p>
-              <p className="text-slate-500 text-sm font-semibold italic border-l-4 border-accent pl-6 py-1 bg-slate-50 rounded-r-xl">
+              <p className="text-slate-700 mb-6 leading-relaxed tracking-wide font-medium">{e.desc}</p>
+              <p className="text-slate-500 text-sm font-semibold italic border-l-4 border-accent pl-6 py-1 bg-slate-50 rounded-r-xl leading-relaxed tracking-wide">
                 {e.help}
               </p>
             </div>
@@ -312,7 +309,7 @@ const HowItWorks = () => {
                 {s.icon}
               </div>
               <h3 className="text-xl font-black text-navy mb-4 tracking-tight">{s.title}</h3>
-              <p className="text-slate-600 font-medium leading-relaxed">{s.desc}</p>
+              <p className="text-slate-600 font-medium leading-relaxed tracking-wide">{s.desc}</p>
             </div>
           ))}
         </div>
@@ -325,12 +322,12 @@ const FinalCTA = () => (
   <section className="bg-navy py-32 px-4 text-white">
     <div className="max-w-4xl mx-auto text-center">
       <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tight">Ready to Get Your Brand Featured?</h2>
-      <p className="text-xl md:text-2xl text-gray-400 mb-16 font-medium">Let's map the right media strategy for your goals.</p>
+      <p className="text-xl md:text-2xl text-gray-400 mb-16 font-medium leading-relaxed tracking-wide">Let's map the right media strategy for your goals.</p>
       <div className="flex flex-col items-center">
         <Button className="w-full md:w-auto mb-8 px-12 py-5 text-xl">
           Schedule Consultation <ArrowRight className="ml-3 w-6 h-6" />
         </Button>
-        <p className="text-sm text-gray-500 font-bold uppercase tracking-widest">Serious inquiries only — focused strategy discussions.</p>
+        <p className="text-sm text-gray-500 font-bold uppercase tracking-widest leading-relaxed">Serious inquiries only — focused strategy discussions.</p>
       </div>
     </div>
   </section>
@@ -341,7 +338,7 @@ const Footer = () => (
     <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 mb-20">
       <div>
         <h3 className="text-2xl font-black mb-6 tracking-tight">Ankit Gautam</h3>
-        <p className="text-gray-400 leading-relaxed font-medium max-w-sm">
+        <p className="text-gray-400 leading-relaxed tracking-wide font-medium max-w-sm">
           Ankit Gautam specializes in global press release distribution and media placement, helping startups and brands achieve strategic visibility in tier-1 publications.
         </p>
       </div>
